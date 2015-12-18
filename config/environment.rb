@@ -5,4 +5,4 @@ require File.expand_path('../application', __FILE__)
 Rails.application.initialize!
 
 # Config gravatar image
-config.gem 'gravatar_image_tag'
+#config.gem 'gravatar_image_tag'
