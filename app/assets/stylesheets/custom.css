@@ -1,3 +1,5 @@
 body { background: #cff; }
 
+.container{width: 710px;}
+
 h1,h2, logo { font-family: 'Roboto', sans-serif;}

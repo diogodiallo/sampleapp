@@ -13,3 +13,54 @@
  *= require_tree .
  *= require_self
  */
+
+body{background: #cff;}
+
+/*Container*/
+.container{ margin: 0; padding: 0;}
+
+
+
+/*HEADER*/
+header{padding-top: 10px;  border-radius: 20px; margin-top: 20px; background-color: #fff;}
+
+header img {padding: 1em; background: #fff;}
+
+/*LIENS*/
+a{color: #09c; text-decoration:  none; background: #c3c3c3;}
+
+a.hover, a.visited {color: #069; text-decoration: underline}
+
+/*TITRES LOGO*/
+#logo h4 {font-family: 'Lobster', sans-serif; margin-top: -3%; margin-left: 3%;}
+
+h1,h2, h3 { font-family: 'Lobster', sans-serif; text-align: center;}
+
+/*SECTION*/
+section {margin-top: 10px; font-size: 24px; padding: 20px; background: #d2d2d2;}
+
+section h1 {font-size: 1.2em; font-family: 'Lobster', sans-serif, serif;}
+
+/*NAV*/
+
+header nav {background: #fff; padding: 20px; white-space: nowrap; width: 510px;}
+
+nav ul {margin: 0; padding: 1%;}
+
+header nav ul li {list-style: none; margin-top: -30%;}
+
+nav ul li a {float: right; display: inline-block; padding: 1%; font-family: 'lobster';}
+
+/*ROUND ET BOUTON INSCRIPTION*/
+.signup_button {text-align: center; background-color: #098; color: #fff; font-family: 'Lobster'; width: 30%;}
+
+.round {border-radius: 20px;}
+
+/*FOOTER*/
+footer {background-color: #fff; margin-top: 3%;}
+
+footer nav  {float: none; }
+
+footer nav ul {margin: 2%; padding: 0.5%;}
+
+footer nav ul li {list-style: none; padding: 0; display: inline-block;}
