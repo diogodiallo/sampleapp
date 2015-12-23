@@ -56,6 +56,19 @@ nav ul li a {float: right; display: inline-block; padding: 1%; font-family: 'lob
 
 .round {border-radius: 20px;}
 
+
+/*PAGE SHOW USER : */
+
+table.profil {width: 100%; margin-bottom: 0;}
+
+td.main {width: 70%; padding: 1em;}
+
+td.sidebar {width: 30%; padding: 1em; vertical-align: top; background: #ffc;}
+
+.profil img.gravatar {border: 1px solid #999; margin-bottom: -15px;}
+
+
+
 /*FOOTER*/
 footer {background-color: #fff; margin-top: 3%;}
 

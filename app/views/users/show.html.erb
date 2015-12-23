@@ -1,0 +1,14 @@
+<table class="profil" summary="Information profil">
+  <tr>
+    <td class="main">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.nom.upcase %>
+      </h1>
+    </td>
+    <td class="sidebar round">
+      <strong>Nom : <%= @user.nom.upcase %></strong>
+      <strong>URL : <%= link_to user_path(@user), @user %></strong>
+    </td>
+  </tr>
+</table>
