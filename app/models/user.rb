@@ -39,7 +39,6 @@ class User < ActiveRecord::Base
     encrypted_password == encrypt(submitted_password)
   end
   
-  
   private
   #Cryptage du mot de passe avec salage (ajout de sel. cf make_salt)
   
@@ -67,6 +66,12 @@ class User < ActiveRecord::Base
         return user if user.has_password?(submitted_password)
         
         # equivaut à : user && user.has_password?(submitted_password) ? user : nil
+    end
+    
+    
+    def self.authenticate_with_salt(id, cookie_salt)
+        user = find_by_id(id)
+        (user && user.salt == cookie_salt) ? user : nil
     end
   
 end

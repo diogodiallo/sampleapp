@@ -1,0 +1,21 @@
+<h1>Connexion</h1>
+
+<div class="formulaire">
+  <%= form_for(:session, :url => sessions_path) do |form| %>
+    <%= render('shared/error_messages') %>
+    <div class="field">
+      <%= form.label :eMail, "Adresse E-mail" %><br>
+      <%= form.text_field :email %>
+    </div>
+    <div class="field">
+      <%= form.label :password, "Mot de passe" %><br>
+      <%= form.password_field :password %>
+    </div>
+    <div class="field">
+     <p>Pas encore membre? <%= link_to "S'inscrire", signup_path %></p>
+    </div>
+    <div class="actions">
+      <%= form.submit "Connexion", :class => "btn-round" %>
+    </div>
+  <% end %>
+</div>

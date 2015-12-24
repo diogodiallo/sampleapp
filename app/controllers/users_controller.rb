@@ -13,8 +13,9 @@ class UsersController < ApplicationController
         @user = User.new(params[:user])
         
         if @user.save
+            sign_in @user
             #Affichage d'un message flash avant la rédirection
-            flash[:success] = "Bienvenue"
+            flash[:success] = "Bienvenue #{@user.nom}"
             #redirection vers le profil membre
             redirect_to @user
         else

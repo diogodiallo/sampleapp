@@ -14,9 +14,11 @@
       
       <section class="round">
         <!--   INCLUSION DU MESSAGE FLASH, EN CAS DE SUCCES OU ERREUR     -->
-        <%= flash.each do |key, value| %>
-          <div class="flash-<%= flash.key %>"><%= value %></div>
-        <% end %>
+          
+            <%= flash.each do |key, value|  %>
+              <div class="flash-<%= flash.key %>"><%= value %></div>
+            <% end %>
+          
         <!--    AFFICHAGE DU CONTENU DE LA PAGE    -->
         <%= yield %>
       </section>
