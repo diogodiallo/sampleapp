@@ -13,7 +13,7 @@ require 'digest'
 
 class User < ActiveRecord::Base
   attr_accessor :password
-  attr_accessible :nom, :email, :password, :password_confirmation
+  #attr_accessible :nom, :email, :password, :password_confirmation
 
 #Definition d'une regex (expression regulière) pour les adresses email
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -65,6 +65,8 @@ class User < ActiveRecord::Base
         user = find_by_email(email)
         return nil if user.nil?
         return user if user.has_password?(submitted_password)
+        
+        # equivaut à : user && user.has_password?(submitted_password) ? user : nil
     end
   
 end
