@@ -43,7 +43,7 @@ class User < ActiveRecord::Base
   #Cryptage du mot de passe avec salage (ajout de sel. cf make_salt)
   
     def encrypt_password
-        self.salt = make_salt if new record?
+        self.salt = make_salt if new_record?
         self.encrypted_password = encrypt(password)
     end
     

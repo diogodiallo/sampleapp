@@ -57,6 +57,10 @@ nav ul li a {float: right; display: inline-block; padding: 1%; font-family: 'lob
 .round {border-radius: 20px;}
 
 
+/*ACCUEIL UTILSATEURS*/
+
+ul.users {margin-top: 1em;} .users li {list-style-type: none;}
+
 /*PAGE SHOW USER : */
 
 table.profil {width: 100%; margin-bottom: 0;}
@@ -75,6 +79,8 @@ td.sidebar {width: 30%; padding: 1em; vertical-align: top; background: #ffc;}
 .field label{font: 16px 'Lobster'; margin-left: -15%; text-decoration: underline; border-bottom: 2px double #233;}
 
 .field input {border-radius: 20px; width: 120%;}
+
+input[type="submit"], input[type="reset"]{ cursor: pointer;}
 
 .btn-round{border-radius: 10px/20px; font: 16px 'Lobster',bold; background: #0f0; color: #fff; width: 70%; margin: 0 auto; line-height: 20px;}
 

@@ -1,0 +1,10 @@
+<h1>Edition profil</h1>
+
+<div class="formulaire">
+  <%= render 'layouts/form_user.html.erb' %>
+  
+  <div class="gravatar">
+    <%= gravatar_for @user %>
+    <a href="http://gravatar.com/emails">Changer</a>
+  </div>
+</div>
