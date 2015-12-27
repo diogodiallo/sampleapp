@@ -14,6 +14,8 @@ require 'digest'
 class User < ActiveRecord::Base
   attr_accessor :password
   #attr_accessible :nom, :email, :password, :password_confirmation
+  
+  has_many :microposts, :dependent => :destroy
 
 #Definition d'une regex (expression regulière) pour les adresses email
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -32,6 +34,12 @@ class User < ActiveRecord::Base
                        
                        
   before_save :encrypt_password
+  
+  
+  
+  def feed
+    Micropost.where("user_id = ?", id)
+  end
   
   
   #LES METHODES CALLBACK

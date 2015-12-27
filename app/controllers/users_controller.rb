@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     
     def show
         @user = User.find(params[:id])
+        @microposts = @user.microposts.paginate(:page => params[:page])
         @titre = "Profil de #{@user.nom}"
     end
     
@@ -71,9 +72,14 @@ class UsersController < ApplicationController
         end
         
         
-        def authenticate
-            deny_access unless signed_in?
+        def microposts_params
+            params.require(:micropost).permit(:content)
         end
+        
+        
+        #def authenticate
+        #    deny_access unless signed_in?
+        #end
         
         
         def correct_user
