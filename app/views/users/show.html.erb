@@ -1,10 +1,11 @@
-<table class="profil" summary="Information profil">
+<table class="profil" summary="Information profile">
   <tr>
     <td class="main">
       <h1>
         <%= @user.nom.upcase %><br>
         <%= gravatar_for @user %>
       </h1>
+      <%= render 'follow_form' if signed_in? %>
       
       <% unless @user.microposts.empty? %>
         <table class="microposts" summary="Micro-message de l'utilisateur">
@@ -17,6 +18,7 @@
       <strong>Nom : <%= @user.nom.upcase %></strong><br>
       <strong>URL : <%= link_to user_path(@user), @user %></strong><br>
       <strong>Messages : </strong><%= @user.microposts.count %> <!-- On compte le nombre de micro-messages et on affiche -->
+      <%= render 'shared/stats' %>
     </td>
   </tr>
 </table>

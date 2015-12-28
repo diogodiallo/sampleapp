@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     #Empêche un membre non connecté d'accéder au profil ou à modifier un autre profil
-    before_filter :authenticate, :only => [:index, :edit, :update]
+    before_filter :authenticate, :except => [:show, :new, :create]
     before_filter :correct_user, :only => [:index, :edit, :update]
     before_filter :admin_user,   :only => :destroy
     
@@ -20,6 +20,22 @@ class UsersController < ApplicationController
         @user = User.new
         @titre = "Inscription"
     end
+    
+    
+    def following
+        @titre = "Following"
+        @user = User.find(params[:id])
+        @users = @user.following.paginate(:page => params[:page])
+        render 'show_follow'
+    end
+
+    def followers
+      @titre = "Followers"
+      @user = User.find(params[:id])
+      @users = @user.followers.paginate(:page => params[:page])
+      render 'show_follow'
+    end
+    
     
     #Verbe POST : creation d'un nouvel utilisateur
     def create
@@ -72,8 +88,8 @@ class UsersController < ApplicationController
         end
         
         
-        def microposts_params
-            params.require(:micropost).permit(:content)
+        def relationships_params
+            params.require(:relationship).permit(:followed_id)
         end
         
         
